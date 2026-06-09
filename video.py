@@ -1,7 +1,6 @@
 import argparse
 import moviepy
 import pygame
-import time
 from PIL import Image
 from colorist import ColorRGB
 import cv2
@@ -15,7 +14,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('filename')
 args = parser.parse_args()
 file = args.filename
-videoheight = int(input("enter the desired height of the video (in chars): "))
+videoheight = int(input("enter the desired width of the video (in chars): "))
 
 content = moviepy.VideoFileClip(file)
 content.audio.write_audiofile("audio.mp3")
@@ -72,7 +71,6 @@ def main(stdscr):
             y += 1
 
         frame += framediff
-        # time.sleep(0.15)
     stdscr.refresh()
     
 
